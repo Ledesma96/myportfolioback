@@ -1,5 +1,6 @@
 import express from 'express';
 import routesMailer from './routes/mailler.routes.js';
+import 'dotenn/config'
 
 const app = express();
 
@@ -18,6 +19,6 @@ app.use('/static', express.static('public'));
 
 app.use('/api/v1/mailler', routesMailer)
 
-app.listen(8080, () => {
-  console.log('Example app listening on port 8080!');
+app.listen(process.env.PORT, () => {
+  console.log(`'Example app listening on port ${PORT}'`);
 });
